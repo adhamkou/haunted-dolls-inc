@@ -1,0 +1,8 @@
+<h1>Make a booking </h1>
+<h2>Choose your preferred booking date</h2>
+<%= simple_form_for([@doll,@booking]) do |f| %>
+<%= f.date_field :booking_start_date %> To:
+<%= f.date_field :booking_end_date %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+<%= link_to "Back to doll", doll_path(@doll) %>

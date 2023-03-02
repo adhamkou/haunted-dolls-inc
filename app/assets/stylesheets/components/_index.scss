@@ -1,0 +1,21 @@
+// Import your components CSS files here.
+@import "alert";
+@import "address_autocomplete";
+@import "avatar";
+@import "button";
+@import "cardcategory";
+@import "cardproduct";
+@import "cardsgrid";
+@import "footer";
+@import "form";
+@import "form_legend_clear";
+@import "home";
+@import "map";
+@import "navbar";
+@import "searchform";
+@import "tabs";
+
+body {
+  position: relative;
+  min-height: 100vh;
+}

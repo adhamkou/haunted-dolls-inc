@@ -1,0 +1,47 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-8">
+<h1>My Bookings</h1>
+<div class="row">
+<div class="col-8">
+  <% @user_bookings.each do |booking| %>
+    <br/>
+    <div class="card-product">
+        <%= cl_image_tag booking.doll.image.key %>
+        <div class="card-product-infos">
+          <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll), class: 'text-dark' %></strong></h2>
+          <p>Price: <%= booking.doll.price %>$</p>
+          <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
+          <p>Status: <%= booking.status %></p>
+        </div>
+    </div>
+  <% end %>
+  </div>
+  </div>
+<br/>
+<div class="row">
+<div class="col-sm-8">
+  <h1>My dolls' bookings</h1>
+    <% @owner_bookings.order(status: :desc).each do |booking| %>
+    <br/>
+      <div class="card-product">
+          <%= cl_image_tag booking.doll.image.key %>
+            <div class="card-product-infos">
+              <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll),class: 'text-black' %></strong></h2>
+              <p>renter: <%= booking.user.first_name %></p>
+              <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
+              <p>status: <%= booking.status %></p>
+            </div>
+      <div class="confirmation d-flex justify-content-end pr-2">
+        <%= form_with url: set_status_path(booking) do |form|%>
+          <p><%= form.radio_button :status,'Accept'%>Accept</p>
+          <p><%= form.radio_button :status, 'Decline'%>Decline</p>
+          <p><%= form.submit "Confirm", class: 'btn btn-primary'%></p>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+    </div>
+</div>

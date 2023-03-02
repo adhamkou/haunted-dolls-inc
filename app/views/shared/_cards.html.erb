@@ -1,0 +1,22 @@
+  <div class="cards">
+    <% @dolls.each do |doll| %>
+      <%= link_to doll_path(doll), class: 'text-decoration-none text-dark' do %>
+        <div class="grid card-trip">
+          <%= cl_image_tag doll.image.key, class: 'card-image' %>
+          <div class="card-trip-infos d-flex justify-content-start">
+            <div class="name">
+              <h2><%= doll.name %></h2>
+            </div>
+            <div class="desciption mt-2">
+              <p class="drop"><%= doll.description %></p>
+            </div>
+            <div class="location">
+              <p class="bold pt-3"><%= doll.location %></p>
+              <h2 class="card-trip-pricing"><%= doll.price %>$/night</h2>
+              <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

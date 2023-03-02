@@ -1,0 +1,32 @@
+<div class="container gradient">
+  <div class="cards">
+    <div class="card-trip">
+      <div class="box">
+        <%= cl_image_tag @doll.image.key, class: 'card-image' %>
+        <div class="top-right">
+          <%= link_to edit_doll_path(@doll), class: 'nav-btn' do %>
+            <i class="fa-regular fa-pen-to-square"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-trip-infos d-flex justify-content-start">
+        <div class="name">
+          <h2><%= @doll.name %></h2>
+        </div>
+        <div class="desciption mt-2">
+          <p class="drop"><%= @doll.description %></p>
+        </div>
+        <div class="location">
+          <p class="bold pt-3"><%= @doll.location %></p>
+          <h2 class="card-trip-pricing"><%= @doll.price %>$/night</h2>
+        </div>
+        <div class='links d-flex justify-content-between mt-2'>
+          <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
+          <%= link_to doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Sure? ⚠️' }, class: 'text-secondary mt-2' do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
