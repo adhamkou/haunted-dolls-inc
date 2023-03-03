@@ -29,6 +29,14 @@ class DollsController < ApplicationController
 
   def show
     @doll = Doll.find(params[:id])
+    if @doll.geocoded?
+      @markers = {
+        lat: @doll.latitude,
+        lng: @doll.longitude,
+        info_window_html: render_to_string(partial: 'info_window', locals: { doll: @doll }),
+        marker_html: render_to_string(partial: 'marker', locals: { doll: @doll }) # Pass the
+      }
+    end
   end
 
   def new
