@@ -1,22 +1,21 @@
-<div class="container">
-    <div class="row">
-      <div class="mx-auto col-sm-8">
-        <h1><center>Make a booking</center> </h1>
+<div class="container form col-8 text-white mt-5">
+  <div class='m-3 mt-2'>
+    <h1>Make a booking</h1>
+    <h2>Choose your preferred booking date</h2>
+  </div>
 
-
-
-        <h2><center>Choose your preferred booking date</center></h2>
-
-
-        <%= simple_form_for([@doll,@booking]) do |f| %>
-        <%= f.date_field :booking_start_date %> To:
-        <%= f.date_field :booking_end_date %>
-        <%= f.input :message, as: :text, :input_html=> {:cols =>5, :rows => 5} %>
-        <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        <% end %>
-
-<br/>
-        <%= link_to "Back to doll", doll_path(@doll),class:'text-decoration-none text-black' %>
-      </div>
+  <div class='m-3'>
+    <%= simple_form_for([@doll,@booking]) do |f| %>
+    <%= f.date_field :booking_start_date %> To:
+    <%= f.date_field :booking_end_date %>
+    <div class='mt-3 mb-4'>
+      <%= f.input :message, as: :text, :input_html=> {:cols =>5, :rows => 5} %>
     </div>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "Back to doll", doll_path(@doll),class:'text-decoration-none text-white m-3' %>
+  </div>
 </div>
