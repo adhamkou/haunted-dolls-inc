@@ -1,0 +1,12 @@
+<div class="container col-8 text-white mb-5">
+  <div class="mb-4 mt-4">
+    <h1>Review the doll</h1>
+  </div>
+  <div class="form">
+    <%= simple_form_for([@booking, @review]) do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :rating %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
