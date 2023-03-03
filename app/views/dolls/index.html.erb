@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container mb-4 mt-4">
   <div class="container gradient">
     <%= form_with url: dolls_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
@@ -12,7 +12,7 @@
   <%= render "shared/cards"  %>
   </div>
   </div>
-  <div id="mapid" style="width: 70%; height: 700px;"
+  <div class="mb-3" id="mapid" style="width: 70%; height: 700px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
