@@ -1,24 +1,22 @@
 <div class="container">
-  <div class="col-sm-8">
-    <div class="d-flex justify-content-center">
-      <div class="row">
-        <h1>Make a booking </h1>
-      <div>
-      <div class="row">
-        <h2>Choose your preferred booking date</h2>
-      <div>
-      <div class="row">
+    <div class="row">
+      <div class="mx-auto col-sm-8">
+        <h1><center>Make a booking</center> </h1>
+
+
+
+        <h2><center>Choose your preferred booking date</center></h2>
+
+
         <%= simple_form_for([@doll,@booking]) do |f| %>
         <%= f.date_field :booking_start_date %> To:
         <%= f.date_field :booking_end_date %>
         <%= f.input :message, as: :text, :input_html=> {:cols =>5, :rows => 5} %>
         <%= f.submit 'Submit', class: 'btn btn-primary' %>
         <% end %>
-      </div>
-      <div class="row">
+
+<br/>
         <%= link_to "Back to doll", doll_path(@doll),class:'text-decoration-none text-black' %>
       </div>
     </div>
-  </div>
-</div>
 </div>
