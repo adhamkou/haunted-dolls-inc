@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :dolls, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
   # resources :bookings, only: [:my_bookings, :set_status]
   get '/my_bookings', to: 'bookings#my_bookings'
   get 'bookings/:id/status', to: 'bookings#status', as: :status
