@@ -1,9 +1,9 @@
-
+<div class="main-container mb-4 mt-4">
 <div class="container gradient">
-  <div class="cards">
+  <div class="">
     <div class="card-trip">
       <div class="box">
-        <%= cl_image_tag @doll.image.key, class: 'card-image' %>
+        <%= cl_image_tag @doll.image.key, class: 'card-image-show' %>
         <div class="top-right">
           <% if @doll.user == current_user %>
             <%= link_to edit_doll_path(@doll), class: 'nav-btn' do %>
@@ -35,9 +35,9 @@
     </div>
   </div>
 </div>
-
-  <div class="mb-3" id="mapid" style="width: 70%; height: 700px;"
-    data-controller="showmap"
-    data-showmap-marker-value="<%= @markers.to_json %>"
-    data-showmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+        <div class="mb-5 px-5" id="mapid" style="width: 70%; height: 600px;"
+           data-controller="showmap"
+            data-showmap-marker-value="<%= @markers.to_json %>"
+            data-showmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+</div>
