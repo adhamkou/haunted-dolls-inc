@@ -164,3 +164,16 @@
 .links {
   width: 100%;
 }
+
+.reviews {
+  display: flex;
+  justify-content: start;
+}
+
+.gradient {
+  margin-bottom: 50px;
+}
+
+.review {
+  border-top: 1px solid rgb(233, 232, 232);
+}
