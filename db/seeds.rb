@@ -64,13 +64,19 @@ attributes2 = [
   { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699589/photo-1583334506779-8f63fae3d11d_x0phys.jpg',
     address: 'lisbon' },
   { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699562/photo-1551875671-d593541a4b84_psnu8a.jpg',
-    address: 'Rio' }
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699516/photo-1613626253486-e2d1d9fd9bc9_yma2cs.jpg',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699471/photo-1612506001235-f0d0892aa11b_k1coc3.jpg',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700384/photo-1583656391619-488983c384e6_rpj8lr.jpg',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700555/photo-1635364796711-7018d19e5e58_ynba0d.jpg',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700585/photo-1519892338195-90abfe1f6984_qnjumi.jpg',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700618/photo-1533662958083-61eb6094138c_knbfle.jpg'
+    address: 'Rio' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699516/photo-1613626253486-e2d1d9fd9bc9_yma2cs.jpg',
+    address: 'Hong Kong' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699471/photo-1612506001235-f0d0892aa11b_k1coc3.jpg',
+    address: 'Antigua' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677875690/photo-1602306081673-f26c56e0c0c8_z2tx2y.jpg',
+    address: 'Helsinki' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677875860/photo-1567801527751-627d3e17ac1c_qyp0wd.jpg',
+    address: 'Sydney' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677875883/photo-1654440243440-c63ee3cc6bb4_sbdyr3.jpg',
+    address: 'Wisconsin' },
+  { img: 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677876076/photo-1532059196142-bd2a6bbbaa55_ahr6bs.jpg',
+    address: 'Montpellier' }
 ]
 
 attributes1.each do |attr|
