@@ -1,43 +1,55 @@
 <div class="main-container mb-4 mt-4">
-<div class="container gradient">
-  <div class="">
-    <div class="card-trip">
-      <div class="box">
-        <%= cl_image_tag @doll.image.key, class: 'card-image-show' %>
-        <div class="top-right">
-          <% if @doll.user == current_user %>
-            <%= link_to edit_doll_path(@doll), class: 'nav-btn' do %>
-              <i class="fa-regular fa-pen-to-square"></i>
+  <div class="container gradient">
+    <div class="">
+      <div class="card-trip">
+        <div class="box">
+          <%= cl_image_tag @doll.image.key, class: 'card-image-show' %>
+          <div class="top-right">
+            <% if @doll.user == current_user %>
+              <%= link_to edit_doll_path(@doll), class: 'nav-btn' do %>
+                <i class="fa-regular fa-pen-to-square"></i>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="card-trip-infos d-flex justify-content-start">
+          <div class="name">
+            <h2><%= @doll.name %></h2>
+          </div>
+          <div class="desciption mt-2">
+            <p class="drop"><%= @doll.description %></p>
+          </div>
+          <div class="location">
+            <p class="bold pt-3"><%= @doll.location %></p>
+            <h2 class="card-trip-pricing"><%= @doll.price %>$/night</h2>
+          </div>
+          <div class='links d-flex justify-content-between mt-2'>
+            <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
+            <% if @doll.user == current_user %>
+              <%= link_to doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Sure? ⚠️' }, class: 'text-secondary mt-2' do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <%# new review %>
+        <div>
+          <h3 class='d-flex justify-content-center'>Reviews</h3>
+          <% @doll.reviews.each do |review| %>
+            <div class='review p-3'>
+              <p><%= review.comment %></p>
+              <p><%= review.rating %></p>
+            </div>
           <% end %>
-          <% end %>
         </div>
-      </div>
-      <div class="card-trip-infos d-flex justify-content-start">
-        <div class="name">
-          <h2><%= @doll.name %></h2>
-        </div>
-        <div class="desciption mt-2">
-          <p class="drop"><%= @doll.description %></p>
-        </div>
-        <div class="location">
-          <p class="bold pt-3"><%= @doll.location %></p>
-          <h2 class="card-trip-pricing"><%= @doll.price %>$/night</h2>
-        </div>
-        <div class='links d-flex justify-content-between mt-2'>
-          <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
-          <% if @doll.user == current_user %>
-            <%= link_to doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Sure? ⚠️' }, class: 'text-secondary mt-2' do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
-          <% end %>
-        </div>
+            <%# new review %>
       </div>
     </div>
   </div>
-</div>
-        <div class="mb-5 px-5" id="mapid" style="width: 70%; height: 600px;"
-           data-controller="showmap"
-            data-showmap-marker-value="<%= @markers.to_json %>"
-            data-showmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+  <div class="mb-5 px-5" id="mapid" style="width: 70%; height: 600px;"
+      data-controller="showmap"
+      data-showmap-marker-value="<%= @markers.to_json %>"
+      data-showmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

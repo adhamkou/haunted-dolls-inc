@@ -22,7 +22,11 @@
           <div class="col-8">
             <p>Message: <%= booking.message %></p>
           </div>
-
+          <%# reviews %>
+          <div class="links d-flex justify-content-end">
+          <%= link_to 'put a review', new_booking_review_path(booking), class: 'btn btn-primary btn-sm' %>
+          </div>
+          <%# reviews %>
         </div>
       </div>
 
