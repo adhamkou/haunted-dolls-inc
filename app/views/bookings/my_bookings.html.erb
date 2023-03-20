@@ -1,62 +1,61 @@
-<div class="container">
+<div class="container text-white">
 <h1><center>My Bookings</center></h1>
-<div class="row">
-<div class="mx-auto col-md-8 mb-5">
+
+<div class="mx-auto col-md-8">
 
 
   <% @user_bookings.each do |booking| %>
     <br/>
 
-    <div class="card-product">
-        <%= cl_image_tag booking.doll.image.key %>
+    <div class="card-product d-flex justify-content-between">
+        <%# flexitem 1 %>
 
-      <div class="card-product-infos">
-        <div class="row">
+          <%= cl_image_tag booking.doll.image.key %>
 
-          <div class="col-4">
-            <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll), class: 'text-dark' %></strong></h2>
-            <p>Price: <%= booking.doll.price %>$</p>
-            <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
-            <p>Status: <%= booking.status %></p>
-          </div>
-          <div class="col-8">
-            <p>Message: <%= booking.message %></p>
-          </div>
-          <%# reviews %>
-          <div class="links d-flex justify-content-end">
-          <%= link_to 'put a review', new_booking_review_path(booking), class: 'btn btn-primary btn-sm' %>
-          </div>
-          <%# reviews %>
+        <%# flexitem 2 %>
+        <div class="card-product-infos text-black">
+          <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll), class: 'text-dark' %></strong></h2>
+          <p>Price: <%= booking.doll.price %>$</p>
+          <p>From: <%= booking.booking_start_date.strftime("%d %B %Y") %></p>
+          <p>To: <%= booking.booking_end_date.strftime("%d %B %Y") %></p>
+          <p>Status: <%= booking.status %></p>
         </div>
-      </div>
+
+        <%# flexitem 3 %>
+        <div class="card-message text-black">
+          <p>Message: <%= booking.message %></p>
+        </div>
+
+        <%# flexitem 4--review%>
+        <div class="links">
+          <%= link_to 'Put a review', new_booking_review_path(booking), class: 'btn btn-primary' %>
+        </div>
+        <%# reviews %>
+
 
     </div>
   <% end %>
 
-<br/>
-
   <h1><center>My dolls' bookings</center></h1>
     <% @owner_bookings.order(status: :desc).each do |booking| %>
-    <br/>
-      <div class="card-product">
+    </br>
+      <div class="card-product d-flex justfity-content-between">
           <%= cl_image_tag booking.doll.image.key %>
-        <div class="card-product-infos">
 
-          <div class="row">
-
-            <div class="col-4">
+           <div class="card-product-infos text-black">
               <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll),class: 'text-black' %></strong></h2>
-              <p>renter: <%= booking.user.first_name %></p>
-              <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
-              <p>status: <%= booking.status %></p>
+              <p>Renter: <%= booking.user.first_name %></p>
+              <p>From: <%= booking.booking_start_date.strftime("%d %B %Y") %></p>
+              <p>To: <%= booking.booking_end_date.strftime("%d %B %Y") %></p>
+              <p>Status: <%= booking.status %></p>
             </div>
 
-            <div class="col-6">
+            <div class="card-message text-black">
               <p>Message: <%= booking.message %></p>
             </div>
 
 
-            <div class="col-2">
+            <div class="card-form text-black">
                 <%= form_with url: set_status_path(booking) do |form|%>
                   <p><%= form.radio_button :status,'Accept'%>Accept</p>
                   <p><%= form.radio_button :status, 'Decline'%>Decline</p>
@@ -64,12 +63,12 @@
                 <% end %>
             </div>
 
-          </div>
+
 
         </div>
-      </div>
+
     <% end %>
 
 
-  </div>
+</div>
 </div>
