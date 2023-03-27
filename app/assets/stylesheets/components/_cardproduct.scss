@@ -89,10 +89,11 @@
   object-fit: cover;
 }
 .card-image-show{
-  height: 400px;
+  height: 200px;
   width: 100%;
   // background-size: contain;
-  background-position: center center;
+  object-fit: cover;
+  // background-position: center center;
 }
 
 .card-trip h2 {
@@ -176,4 +177,10 @@
 
 .review {
   border-top: 1px solid rgb(233, 232, 232);
+  border-bottom: 1px solid rgb(233, 232, 232);
+  font-size: 20px;
+}
+
+span {
+  font-size: 20px;
 }
