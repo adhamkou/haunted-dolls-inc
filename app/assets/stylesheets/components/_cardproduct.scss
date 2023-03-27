@@ -2,9 +2,11 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  box-shadow: 0 0 3px rgb(233, 232, 232);
+  margin-bottom: 10px;
 }
 
 .card-product img {
@@ -24,14 +26,14 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 15px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
+// .card-product .card-product-infos {
+//   padding: 16px;
+// }
 
-// card-trip css in show and index
+card-trip css in show and index
 
 .cards {
   display: grid;
@@ -162,14 +164,16 @@
   font-size: 18px;
 }
 
-.links {
-  width: 100%;
+
+// .reviews {
+//   display: flex;
+//   justify-content: start;
+// }
+
+.review {
+  border-top: 1px solid rgb(233, 232, 232);
 }
 
-.reviews {
-  display: flex;
-  justify-content: start;
-}
 
 .gradient {
   margin-bottom: 50px;
@@ -183,4 +187,46 @@
 
 span {
   font-size: 20px;
+}
+
+
+.card-form {
+  height: 100%;
+}
+
+.card-product-infos {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 180px;;
+  height: 100%;
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    margin: 0px;
+  }
+}
+
+.card-message {
+  height:100%;
+  flex-grow: 1;
+  p {
+    margin: 0;
+    height: 100%;
+    padding-top: 10px;
+  }
+}
+
+.links {
+  width: 100%;
+  // justify-content: space-between;
+  // text-align:center;
+  // width:105px;
+  // height:50px;
+  // align-self: end;
+  .button {
+    font-size: 15px;
+    padding: 12px 0 0 0;
+    width: 100%;
+  }
 }
