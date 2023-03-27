@@ -1,5 +1,5 @@
 <div class="container text-white">
-  <h1><center>My Bookings</center></h1>
+  <h1 class='mt-4'><center>My Bookings</center></h1>
 
   <div class="mx-auto col-md-8">
 
@@ -36,7 +36,7 @@
       </div>
     <% end %>
 
-    <h1><center>My dolls' bookings</center></h1>
+    <h1 class='mt-4'><center>My dolls' bookings</center></h1>
       <% @owner_bookings.order(status: :desc).each do |booking| %>
         </br>
         <div class="card-product d-flex justfity-content-between">
